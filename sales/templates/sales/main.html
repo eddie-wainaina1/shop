@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %} 
+list 
+{% endblock title %} 
+
+{% block content %} 
+sales list 
+<br/>
+
+{% for obj in qs %} <!-- object_list} -->
+    <!-- <div class="card mt-3">
+        <a href="{% url 'sales:detail' obj.pk %}"
+    class= "card-body">
+            {{obj.transaction_id}}
+        </a>
+    </div> -->
+    <a href="{{obj.get_absolute_url}}" >{{obj.transaction_id}}</a><br/>
+{% endfor %}
+
+{% endblock content %}
